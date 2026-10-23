@@ -1,0 +1,9 @@
+.venv/
+.pio/
+__pycache__/
+.pytest_cache/
+.env
+server/data/
+firmware/*/include/config.h
+*.pt
+runs/

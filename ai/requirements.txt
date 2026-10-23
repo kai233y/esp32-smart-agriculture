@@ -1,0 +1,6 @@
+# Python 3.11 recommended; install CPU/GPU PyTorch for your platform first if needed.
+ultralytics==8.3.70
+torch==2.6.0
+torchvision==0.21.0
+numpy==1.26.4
+PyYAML==6.0.2

@@ -1,0 +1,12 @@
+# All paths are resolved relative to this YAML by train.py.
+path: dataset
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: tomato_early_blight
+  1: tomato_late_blight
+  2: tomato_leaf_mold
+  3: aphid
+  4: whitefly
+  5: leaf_miner

@@ -1,0 +1,10 @@
+.env
+.venv*
+**/.pio
+**/__pycache__
+**/.pytest_cache
+**/include/config.h
+server/data
+runs
+models
+.git

@@ -1,0 +1,8 @@
+services:
+  farm:
+    build:
+      dockerfile: server/Dockerfile.ai
+    environment:
+      MODEL_PATH: /app/models/best.pt
+    volumes:
+      - ./models:/app/models:ro

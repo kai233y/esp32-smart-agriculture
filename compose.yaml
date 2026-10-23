@@ -1,0 +1,13 @@
+services:
+  farm:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    env_file: .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - farm-data:/app/server/data
+    restart: unless-stopped
+volumes:
+  farm-data:

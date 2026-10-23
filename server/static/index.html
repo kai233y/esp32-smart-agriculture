@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>田间 · 智慧农业</title><link rel="stylesheet" href="/static/style.css"></head>
+<body>
+<header><div><span class="eyebrow">FIELD STATION / 01</span><h1>田间 <small>智慧农业控制台</small></h1></div><span id="connection" class="badge">尚未连接</span></header>
+<main>
+<section class="auth"><label>管理员令牌 <input id="token" type="password" autocomplete="off" placeholder="粘贴 ADMIN_TOKEN，仅在本页内存保存"></label><button id="connect">连接系统</button><span id="notice" role="status" aria-live="polite">设备默认关闭自动控制，请先完成接线和标定。</span></section>
+<section class="metrics" id="metrics"></section>
+<div class="columns">
+<section class="panel"><div class="heading"><div><span class="eyebrow">ENVIRONMENT</span><h2>环境趋势</h2></div><span id="updated">等待设备上报</span></div><div id="faults" class="warning">暂无遥测</div><svg id="trend" viewBox="0 0 700 190" role="img" aria-label="土壤相对湿度与空气相对湿度趋势"></svg><p class="muted">土壤相对湿度（绿） / 空气相对湿度（蓝），纵轴 0–100%；最多显示最近 120 次采样。</p></section>
+<section class="panel"><span class="eyebrow">ACTUATORS</span><h2>执行器控制</h2><p class="muted">手动指令有时效；缺水、传感器异常和水泵限时保护优先。</p><div id="actuators"></div><p id="policyStatus" class="muted"></p></section>
+</div>
+<div class="columns">
+<section class="panel"><div class="heading"><div><span class="eyebrow">AUTOMATION</span><h2>自动控制策略</h2></div><label class="toggle"><input id="auto_enabled" type="checkbox">启用自动</label></div>
+<form id="policyForm"><div class="fields" id="policyFields"></div><button type="submit">保存策略</button><p class="muted">土壤百分比为两点标定的相对值。阈值仅为演示初值，请按作物和基质调整。补光采用光照回差，暂不含昼夜时程。</p></form></section>
+<section class="panel"><div class="heading"><div><span class="eyebrow">PLANT HEALTH</span><h2>病虫害识别</h2></div><span id="model" class="badge">模型状态未知</span></div><p class="muted">相机每分钟上传；也可选取现场照片。只有加载已训练的农业模型后才进行识别。</p><label class="upload">上传 JPEG / PNG（≤2 MiB）<input id="imageFile" type="file" accept="image/jpeg,image/png"></label><p id="recognition" role="status">等待图片</p><canvas id="photo" aria-label="采集图片及病虫害检测框"></canvas><div id="imageList" class="imageList"></div></section>
+</div>
+<section class="panel"><span class="eyebrow">OPERATIONS</span><h2>最近操作</h2><div id="audit" class="muted">暂无记录</div></section>
+<footer>ESP32 本地控制 · HTTP 网关 · 本地模型推理 ｜ 单区原型系统</footer>
+</main><script src="/static/app.js"></script></body></html>
